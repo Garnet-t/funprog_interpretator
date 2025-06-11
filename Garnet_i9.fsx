@@ -241,7 +241,7 @@ and forceValue v =
   match v with
   | Thunk thunk -> thunk()
   | _ -> v
-
+//запуск пробежки кода в той программе
 let execute (code: string) : RuntimeValue =
     let tokens = lex code
     let expr, rest = parseExpression tokens
