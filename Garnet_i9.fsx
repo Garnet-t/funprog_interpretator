@@ -92,7 +92,7 @@ let lex input =
 
   lexer 0
 
-// Парсер выражений
+// Парсинг
 let rec parseExpression tokens =
   match tokens with
   | LetKeyword :: Identifier v :: Assignment :: rest ->
