@@ -242,8 +242,8 @@ and forceValue v =
   | Thunk thunk -> thunk()
   | _ -> v
 
-let execute code =
-  let tokens = lex code
-  let expr, rest = parseExpression tokens
-  if rest <> [] then failwith "Unparsed tokens remain"
-  evaluate Map.empty expr
+let execute (code: string) : RuntimeValue =
+    let tokens = lex code
+    let expr, rest = parseExpression tokens
+    if rest <> [] then failwith "Unparsed tokens remain"
+    evaluate Map.empty expr
